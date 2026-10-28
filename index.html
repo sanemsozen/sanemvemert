@@ -79,8 +79,6 @@
             font-family: 'Dancing Script', cursive;
             font-size: 1.8rem;
             font-weight: bold;
-            color: rgba(255, 45, 85, 0.4);
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
             white-space: nowrap;
             animation: floatUp 12s linear infinite;
             opacity: 0;
@@ -175,7 +173,7 @@
             border-radius: 24px;
             box-shadow: 0 0 30px rgba(255, 45, 85, 0.2), inset 0 0 15px rgba(0, 240, 255, 0.1);
             backdrop-filter: blur(10px);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             margin-top: 20px;
         }
 
@@ -190,8 +188,8 @@
         }
 
         .quote-box {
-            margin-top: 20px;
-            padding: 15px 25px;
+            margin-top: 15px;
+            padding: 12px 20px;
             background: rgba(255, 45, 85, 0.1);
             border-left: 4px solid #00f0ff;
             border-right: 4px solid #ff2d55;
@@ -200,11 +198,178 @@
         }
 
         .main-quote {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #fff;
             letter-spacing: 1px;
             text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+        }
+
+        /* ✅ ÖZEL ANİMASYON BÖLÜMÜ (Yeni) */
+        .animation-showcase {
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .anim-title {
+            color: #00f0ff;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+        }
+
+        .animation-container {
+            width: 100%;
+            height: 350px;
+            background: rgba(18, 18, 30, 0.9);
+            border-radius: 24px;
+            border: 2px solid rgba(255, 45, 85, 0.6);
+            box-shadow: 0 0 40px rgba(255, 45, 85, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Figürler tabana otursun */
+            padding-bottom: 20px;
+        }
+
+        /* Sanem (Prenses) Figürü */
+        .fig-sanem {
+            position: absolute;
+            bottom: 60px; /* Mert'in üzerinde kalsın */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 180px;
+            z-index: 5;
+            animation: princessFloat 4s ease-in-out infinite;
+        }
+
+        /* Prenses Karakteri (Görsellerden esinlenilmiş karakteristik yüz hattı, kızıl saç) */
+        .sanem-head {
+            width: 50px;
+            height: 50px;
+            background: #f5d0b0; /* Ten rengi */
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 35px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        /* Kızıl Saç */
+        .sanem-hair {
+            position: absolute;
+            top: -5px;
+            left: 30px;
+            width: 60px;
+            height: 50px;
+            background: #b53a25; /* Kızıl saç rengi */
+            border-radius: 25px 25px 0 0;
+        }
+        /* Taç */
+        .sanem-crown {
+            position: absolute;
+            top: -15px;
+            left: 48px;
+            font-size: 1.2rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700;
+        }
+        /* Elbise (Neon Kırmızı/Pembe) */
+        .sanem-dress {
+            width: 80px;
+            height: 110px;
+            background: linear-gradient(180deg, #ff2d55, #b51532);
+            position: absolute;
+            top: 45px;
+            left: 20px;
+            border-radius: 40px 40px 10px 10px;
+            box-shadow: 0 0 15px rgba(255, 45, 85, 0.7);
+        }
+
+        /* Mert (Şövalye, Diz Çöken) Figürü */
+        .fig-mert {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 120px;
+            z-index: 4;
+            animation: knightKneel 4s ease-in-out infinite;
+        }
+
+        /* Mert Karakteri (Görsellerden esinlenilmiş karakteristik yüz, sakal, koyu kıvırcık saç) */
+        .mert-head {
+            width: 45px;
+            height: 45px;
+            background: #e8c4a0; /* Ten rengi */
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 27px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        /* Koyu Kıvırcık Saç ve Sakal */
+        .mert-hair-beard {
+            position: absolute;
+            top: -8px;
+            left: 22px;
+            width: 55px;
+            height: 50px;
+            background: #2a1b12; /* Koyu kahve/siyah kıvırcık saç */
+            border-radius: 25px 25px 15px 15px;
+        }
+        /* Diz Çöken Vücut (Zırh - Neon Mavi) */
+        .mert-armor {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(180deg, #00f0ff, #007780);
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            border-radius: 10px 10px 30px 30px; /* Diz çökmüş gibi */
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
+        }
+        /* Mert'in Elinde Kalp Tutması */
+        .mert-heart {
+            position: absolute;
+            top: 45px;
+            left: 42px;
+            font-size: 1rem;
+            color: #ff2d55;
+            animation: heartPulse 1.5s infinite;
+        }
+
+        /* Animasyon Döngüleri */
+        @keyframes princessFloat {
+            0%, 100% { transform: translateX(-50%) translateY(0px) rotate(0deg); }
+            50% { transform: translateX(-50%) translateY(-10px) rotate(2deg); }
+        }
+
+        @keyframes knightKneel {
+            0%, 100% { transform: translateX(-50%) scaleY(1); }
+            50% { transform: translateX(-50%) scaleY(0.95); }
+        }
+
+        @keyframes heartPulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Yer Neon Çizgisi */
+        .ground-line {
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00f0ff, transparent);
+            box-shadow: 0 0 10px #00f0ff;
         }
 
         /* Doğum Günü Kartları */
@@ -265,7 +430,7 @@
         }
 
         .counter-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #ccc;
             margin-bottom: 20px;
             text-transform: uppercase;
@@ -348,7 +513,7 @@
         }
 
         .compliment-text {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #fff;
             font-weight: 500;
             transition: opacity 0.3s ease;
@@ -380,11 +545,16 @@
         }
 
         @media (max-width: 600px) {
-            .names { font-size: 2.5rem; }
+            .names { font-size: 2.3rem; }
             .main-quote { font-size: 1.1rem; }
             .timer-grid { grid-template-columns: repeat(2, 1fr); }
             .time-number { font-size: 1.6rem; }
             .music-widget { top: 10px; right: 10px; padding: 8px 12px; }
+            .animation-container { height: 300px; }
+            .fig-sanem { width: 100px; height: 160px; bottom: 50px; }
+            .fig-mert { width: 90px; height: 110px; bottom: 25px; }
+            .sanem-dress { width: 70px; left: 15px; }
+            .mert-armor { width: 55px; left: 17px; }
         }
     </style>
 </head>
@@ -422,12 +592,38 @@
             </div>
         </header>
 
+        <!-- ✅ ÖZEL ANİMASYON ALANI (Müzik çalar gibi dönen prenses ve diz çöken Mert) -->
+        <section class="animation-showcase">
+            <div class="anim-title">Aşkımızın Masalı ✨</div>
+            <div class="animation-container">
+                
+                <!-- Mert (Diz Çöken) -->
+                <div class="fig-mert">
+                    <div class="mert-hair-beard"></div>
+                    <div class="mert-head"></div>
+                    <div class="mert-armor"></div>
+                    <div class="mert-heart">💖</div>
+                </div>
+
+                <!-- Sanem (Prenses) -->
+                <div class="fig-sanem">
+                    <div class="sanem-hair"></div>
+                    <div class="sanem-head"></div>
+                    <div class="sanem-dress"></div>
+                    <div class="sanem-crown">👑</div>
+                </div>
+
+                <div class="ground-line"></div>
+            </div>
+        </section>
+
         <!-- Profil Kartları -->
         <div class="profiles-grid">
             <div class="profile-card sanem">
                 <h3>Sanem 👑</h3>
                 <p>Aşkın En Güzel Hali</p>
-                <div class="date-badge" style="color: #ff2d55;">🎂 21 Haziran 2003</div>
+                <!-- ✅ DÜZELTİLEN TARİH: 26 Haziran 2003 -->
+                <div class="date-badge" style="color: #ff2d55;">🎂 26 Haziran 2003</div>
             </div>
             
             <div class="profile-card mert">
@@ -498,7 +694,6 @@
 
         function toggleMusic() {
             if (!isPlaying) {
-                // Şarkı daha önce başlamadıysa veya başa döndüyse 40. saniyeye ayarla
                 if (music.currentTime < 40) {
                     music.currentTime = 40;
                 }
