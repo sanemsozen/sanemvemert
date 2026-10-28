@@ -155,9 +155,7 @@
             text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
         }
 
-        /* ==================================================== */
-        /* ✅ YENİ DİZ ÇÖKEN KRAL & PRENSES ANİMASYON ALANI */
-        /* ==================================================== */
+        /* DİZ ÇÖKEN KRAL & PRENSES ANİMASYON ALANI */
         .animation-showcase {
             margin-bottom: 40px; text-align: center; position: relative;
         }
@@ -170,7 +168,7 @@
 
         .animation-box {
             width: 100%; max-width: 650px; height: 380px; margin: 0 auto;
-            background: radial-gradient(circle at center, rgba(30, 20, 45, 0.9), rgba(5, 5, 10, 0.95));
+            background: radial-gradient(circle at center, rgba(30, 20, 45, 0.95), rgba(5, 5, 10, 0.98));
             border-radius: 24px; border: 2px solid rgba(0, 240, 255, 0.4);
             box-shadow: 0 0 35px rgba(255, 45, 85, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.9);
             position: relative; overflow: hidden;
@@ -196,34 +194,34 @@
             50% { transform: translateY(2px); }
         }
 
-        .heart-offer-anim {
-            animation: heartPulse 1.2s infinite alternate;
+        .rose-anim {
+            animation: rosePulse 1.5s infinite alternate;
         }
-        @keyframes heartPulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            100% { transform: scale(1.25); opacity: 1; filter: drop-shadow(0 0 8px #ff2d55); }
+        @keyframes rosePulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 4px #ff0000); }
+            100% { transform: scale(1.15); filter: drop-shadow(0 0 10px #ff2d55); }
         }
 
         /* UÇAN MAVİ KUŞ & MURTİ MURTİ BALONU */
         .murti-bird-group {
-            animation: orbitBird 6s ease-in-out infinite;
+            animation: orbitBird 5s ease-in-out infinite;
         }
         @keyframes orbitBird {
             0% { transform: translate(0px, 0px); }
-            25% { transform: translate(15px, -12px); }
-            50% { transform: translate(-10px, -20px); }
-            75% { transform: translate(-20px, -5px); }
+            25% { transform: translate(12px, -10px); }
+            50% { transform: translate(-8px, -16px); }
+            75% { transform: translate(-15px, -4px); }
             100% { transform: translate(0px, 0px); }
         }
 
         .murti-text-bubble {
             font-size: 14px; font-weight: 700; fill: #00f0ff;
-            filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.9));
+            filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.9));
             animation: murtiFlash 1.5s infinite alternate;
         }
         @keyframes murtiFlash {
-            0% { opacity: 0.7; transform: scale(0.95); }
-            100% { opacity: 1; transform: scale(1.05); }
+            0% { opacity: 0.8; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1.03); }
         }
 
         /* PROFİLLER VE SAYAÇLAR */
@@ -271,19 +269,19 @@
         .time-number { font-size: 1.8rem; font-weight: 700; color: #00f0ff; text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
         .time-label { font-size: 0.75rem; color: #aaa; margin-top: 3px; }
 
-        /* UZAK SAYAÇLAR (3 TANE) */
+        /* UZAK SAYAÇLAR (4 TANE) */
         .upcoming-counters {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px; margin-bottom: 40px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; margin-bottom: 40px;
         }
 
         .up-card {
-            background: rgba(15, 15, 25, 0.85); border-radius: 18px; padding: 18px;
+            background: rgba(15, 15, 25, 0.85); border-radius: 18px; padding: 16px;
             border: 1px solid rgba(255, 255, 255, 0.1); text-align: center;
         }
 
-        .up-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 10px; color: #ff2d55; }
-        .up-timer { font-size: 1.1rem; font-weight: 700; color: #00f0ff; letter-spacing: 1px; }
+        .up-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: #ff2d55; }
+        .up-timer { font-size: 1.05rem; font-weight: 700; color: #00f0ff; letter-spacing: 1px; }
 
         /* HİKAYE & İLTİFAT */
         .story-card {
@@ -314,13 +312,14 @@
         @media (max-width: 600px) {
             .names { font-size: 2.4rem; }
             .timer-grid { grid-template-columns: repeat(2, 1fr); }
-            .animation-box { height: 320px; }
+            .animation-box { height: 340px; }
+            .upcoming-counters { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Müzik Çalar -->
+    <!-- Müzik Çalar (Serdar Ortaç - Gülün Rengi / 0.40s) -->
     <audio id="bgMusic" loop>
         <source src="https://archive.org/download/serdar-ortac-gulun-rengi/Serdar%20Ortac%20-%20Gulun%20Rengi.mp3#t=40" type="audio/mpeg">
     </audio>
@@ -347,17 +346,15 @@
             </div>
         </header>
 
-        <!-- ==================================================== -->
-        <!-- ✅ DİZ ÇÖKEN MERT & KRALİÇE SANEM SVG ANİMASYONU -->
-        <!-- ==================================================== -->
+        <!-- DİZ ÇÖKEN MERT & KRALİÇE SANEM SVG ANİMASYONU -->
         <section class="animation-showcase">
             <div class="anim-title">Kraliçemin Önünde Saygıyla ✨</div>
             <div class="animation-box">
-                <svg width="100%" height="100%" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg">
+                <svg width="100%" height="100%" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
                     
                     <!-- Zemin Işığı ve Neon Çizgi -->
-                    <ellipse cx="300" cy="305" rx="220" ry="20" fill="url(#groundGlow)" opacity="0.6"/>
-                    <line x1="100" y1="305" x2="500" y2="305" stroke="#00f0ff" stroke-width="2" stroke-dasharray="8 4" opacity="0.8"/>
+                    <ellipse cx="300" cy="315" rx="230" ry="20" fill="url(#groundGlow)" opacity="0.6"/>
+                    <line x1="80" y1="315" x2="520" y2="315" stroke="#00f0ff" stroke-width="2" stroke-dasharray="8 4" opacity="0.8"/>
 
                     <defs>
                         <radialGradient id="groundGlow" cx="50%" cy="50%" r="50%">
@@ -366,18 +363,14 @@
                         </radialGradient>
                     </defs>
 
-                    <!-- ==================================== -->
                     <!-- 1. DİZ ÇÖKEN MERT (KRAL MERT) -->
-                    <!-- ==================================== -->
                     <g class="mert-kneel-anim">
                         <!-- Pelerin -->
-                        <path d="M 180 180 Q 140 230 150 295" stroke="#00f0ff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
+                        <path d="M 180 180 Q 140 230 150 305" stroke="#00f0ff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
 
-                        <!-- Diz Çöken Bacaklar (Çok Belirgin Duruş) -->
-                        <!-- Arka Bacak (Yere Yatık Diz) -->
-                        <path d="M 195 240 L 160 295 L 210 295" stroke="#ffffff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        <!-- Ön Bacak (Bükük Diz) -->
-                        <path d="M 205 240 L 230 265 L 230 295" stroke="#00f0ff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Diz Çöken Bacaklar -->
+                        <path d="M 195 240 L 160 305 L 210 305" stroke="#ffffff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 205 240 L 230 270 L 230 305" stroke="#00f0ff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
                         <!-- Gövde -->
                         <line x1="195" y1="170" x2="195" y2="240" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
@@ -395,20 +388,26 @@
                         <circle cx="195" cy="98" r="2" fill="#00f0ff"/>
                         <circle cx="208" cy="103" r="2" fill="#ff2d55"/>
 
-                        <!-- Uzatılan Kol ve Parlayan Kalp -->
+                        <!-- UZATILAN KOL VE KIRMIZI GÜL (🌹) -->
                         <path d="M 195 185 L 240 195 L 265 185" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
-                        <g class="heart-offer-anim" transform="translate(265, 175)">
-                            <path d="M 0 5 Q -6 -6 0 -12 Q 6 -6 0 5 Z" fill="#ff2d55" transform="scale(1.3)"/>
+                        
+                        <!-- Görkemli Gül Vektörü -->
+                        <g class="rose-anim" transform="translate(265, 185)">
+                            <!-- Gül Sapı & Yaprağı -->
+                            <line x1="0" y1="0" x2="15" y2="-10" stroke="#2e7d32" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M 5 -2 Q 12 -12 8 -18 Q 2 -8 5 -2 Z" fill="#4caf50"/>
+                            <!-- Kırmızı Gül Goncası -->
+                            <circle cx="16" cy="-12" r="7" fill="#e60000"/>
+                            <circle cx="14" cy="-14" r="4.5" fill="#ff2d55"/>
+                            <path d="M 12 -16 Q 16 -22 20 -16 Q 16 -10 12 -16 Z" fill="#ff4d4d"/>
                         </g>
                     </g>
 
 
-                    <!-- ==================================== -->
                     <!-- 2. PRENSES SANEM (AYAKTA ZARİF) -->
-                    <!-- ==================================== -->
                     <g class="sanem-breath">
-                        <!-- Görkemli Prenses Elbisesi (Neon Pembe/Kırmızı) -->
-                        <path d="M 360 175 L 320 295 L 400 295 Z" fill="url(#dressGrad)" stroke="#ff2d55" stroke-width="2"/>
+                        <!-- Görkemli Prenses Elbisesi -->
+                        <path d="M 360 175 L 320 305 L 400 305 Z" fill="url(#dressGrad)" stroke="#ff2d55" stroke-width="2"/>
                         <defs>
                             <linearGradient id="dressGrad" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="0%" stop-color="#ff2d55"/>
@@ -419,8 +418,8 @@
                         <!-- Gövde -->
                         <line x1="360" y1="140" x2="360" y2="178" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
 
-                        <!-- Sanem'in Canlı Kızıl Saçları -->
-                        <path d="M 335 120 Q 360 95 385 120 L 390 160 Q 360 150 330 160 Z" fill="#b53a25"/>
+                        <!-- SANEM'İN CANLI KIRMIZI SAÇLARI (Tam Kırmızı!) -->
+                        <path d="M 335 120 Q 360 95 385 120 L 392 165 Q 360 152 328 165 Z" fill="#e60033"/>
 
                         <!-- Yüzü & Gözlükleri -->
                         <circle cx="360" cy="125" r="18" fill="#f5d0b0"/>
@@ -439,19 +438,19 @@
                     </g>
 
 
-                    <!-- ==================================== -->
-                    <!-- 3. SANEM'İN BAŞINDA UÇAN MAVİ KUŞ & "MURTİ MURTİ" -->
-                    <!-- ==================================== -->
-                    <g transform="translate(360, 65)">
+                    <!-- 3. SANEM'İN BAŞINDA UÇAN MAVİ KUŞ & BÜYÜTÜLMÜŞ "MURTİ MURTİ" BALONU -->
+                    <g transform="translate(360, 60)">
                         <g class="murti-bird-group">
-                            <!-- Uçan Mavi Kuş -->
-                            <path d="M 0 0 Q -10 -12 -20 -2 Q -10 2 0 0 Q 10 -12 20 -2 Q 10 2 0 0 Z" fill="#00f0ff"/>
-                            <circle cx="3" cy="-3" r="1.5" fill="#fff"/>
+                            <!-- Uçan Mavi Kuş (Canlı Mavi) -->
+                            <path d="M 0 0 Q -12 -15 -24 -2 Q -12 4 0 0 Q 12 -15 24 -2 Q 12 4 0 0 Z" fill="#00f0ff" stroke="#00bfff" stroke-width="1"/>
+                            <circle cx="4" cy="-4" r="2" fill="#fff"/>
+                            <circle cx="5" cy="-4" r="1" fill="#000"/>
                             
-                            <!-- "Murti Murti" Konuşma Balonu -->
-                            <g transform="translate(15, -25)">
-                                <path d="M 0 0 L 35 -10 L 75 -10 L 75 -30 L 0 -30 Z" fill="rgba(18, 18, 30, 0.85)" stroke="#00f0ff" stroke-width="1.5" rx="5"/>
-                                <text x="8" y="-16" class="murti-text-bubble">murti murti ❤️</text>
+                            <!-- Genişletilmiş "Murti Murti" Konuşma Balonu -->
+                            <g transform="translate(10, -32)">
+                                <rect x="0" y="-22" width="115" height="30" rx="8" fill="rgba(18, 18, 30, 0.92)" stroke="#00f0ff" stroke-width="2"/>
+                                <polygon points="10,8 18,0 2,0" fill="rgba(18, 18, 30, 0.92)" stroke="#00f0ff" stroke-width="1"/>
+                                <text x="10" y="-2" class="murti-text-bubble">murti murti ❤️</text>
                             </g>
                         </g>
                     </g>
@@ -498,21 +497,26 @@
             </div>
         </section>
 
-        <!-- ✅ 3 TANE UZAK SAYAÇ -->
+        <!-- 4 TANE UZAK SAYAÇ -->
         <div class="upcoming-counters">
             <div class="up-card">
-                <div class="up-title">👑 Sanem'in Doğum Gününe Kalan</div>
+                <div class="up-title">👑 Sanem'in Doğum Günü</div>
                 <div class="up-timer" id="sanemTimer">Hesaplanıyor...</div>
             </div>
 
             <div class="up-card">
-                <div class="up-title">⚡ Mert'in Doğum Gününe Kalan</div>
+                <div class="up-title">⚡ Mert'in Doğum Günü</div>
                 <div class="up-timer" id="mertTimer">Hesaplanıyor...</div>
             </div>
 
             <div class="up-card">
-                <div class="up-title">💖 Tanışma / Dönüm Gününe Kalan</div>
+                <div class="up-title">💖 Tanışma / Yıldönümü</div>
                 <div class="up-timer" id="annivTimer">Hesaplanıyor...</div>
+            </div>
+
+            <div class="up-card">
+                <div class="up-title">🌹 14 Şubat Sevgililer Günü</div>
+                <div class="up-timer" id="valenTimer">Hesaplanıyor...</div>
             </div>
         </div>
 
@@ -614,13 +618,14 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 2. GELECEK SAYAÇLAR (Sanem 26 Haziran, Mert 13 Kasım, Yıldönümü 28 Eylül)
+        // 2. GELECEK SAYAÇLAR (Sanem 26 Haz, Mert 13 Kas, Yıldönümü 28 Eyl, 14 Şub Sevgililer Günü)
         function updateUpcoming() {
             const now = new Date();
             
-            id('sanemTimer').innerText = getNextCountdown(now, 5, 26); // Haziran (0-indexed: 5)
-            id('mertTimer').innerText = getNextCountdown(now, 10, 13); // Kasım (0-indexed: 10)
-            id('annivTimer').innerText = getNextCountdown(now, 8, 28);  // Eylül (0-indexed: 8)
+            id('sanemTimer').innerText = getNextCountdown(now, 5, 26);  // 26 Haziran
+            id('mertTimer').innerText = getNextCountdown(now, 10, 13);  // 13 Kasım
+            id('annivTimer').innerText = getNextCountdown(now, 8, 28);   // 28 Eylül
+            id('valenTimer').innerText = getNextCountdown(now, 1, 14);   // 14 Şubat
         }
 
         function getNextCountdown(now, month, day) {
